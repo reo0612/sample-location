@@ -149,7 +149,9 @@ extension ViewController: CLLocationManagerDelegate {
         let lng = gps.longitude
         print("経度：\(String(describing: lat)), 緯度：\(String(describing: lng))")
     }
+    // 何らかの原因があって位置情報を取得できない場合に呼ばれるメソッド
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("\((error as NSError).code)")
+        // 本来なら、アラートで画面にエラー内容を表示したりする
+        print("\((error as NSError).domain)")
     }
 }
